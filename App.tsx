@@ -1,10 +1,10 @@
+import { StatusBar, TouchableOpacity } from 'react-native';
 import { NavigationContainer, NavigationProp, useNavigation } from '@react-navigation/native';
+import { NativeStackScreenProps, createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Ionicons } from '@expo/vector-icons';
 import NewProduct from './app/screens/NewProduct';
 import Home from './app/screens/Home';
-import { NativeStackScreenProps, createNativeStackNavigator } from '@react-navigation/native-stack';
 import Products from './app/screens/Products';
-import { StatusBar, TouchableOpacity } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 
 type RootStackNavigatorParamList = {
   Products: undefined;
@@ -36,7 +36,7 @@ const RootStackNavigation = () => {
       <RootStack.Screen name="Modal" component={NewProduct} options={{ presentation: 'modal' }} />
     </RootStack.Navigator>
   )
-}
+};
 
 export default function App() {
 
@@ -48,6 +48,6 @@ export default function App() {
       </NavigationContainer>
     </>
   );
-}
+};
 
 

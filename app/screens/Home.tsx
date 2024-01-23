@@ -1,10 +1,10 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import { View, Text, Button, FlatList, StyleSheet, Image, TouchableOpacity, StatusBar } from 'react-native'
-import { useFocusEffect } from '@react-navigation/native'
-import { ProductsPageProps } from '../../App'
-import { Product, useDB } from '../hooks/useDB'
-import { numberFormat } from '../utils'
-import DropDownPicker from 'react-native-dropdown-picker'
+import React, { useCallback, useState } from 'react';
+import { View, Text, FlatList, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
+import DropDownPicker from 'react-native-dropdown-picker';
+import { ProductsPageProps } from '../../App';
+import { Product, useDB } from '../hooks/useDB';
+import { numberFormat } from '../utils';
 
 const Home = ({ navigation }: ProductsPageProps) => {
     const { getProducts, getAllCategories, getProductsByCategory } = useDB();
@@ -49,10 +49,8 @@ const Home = ({ navigation }: ProductsPageProps) => {
                     <Text>{numberFormat(item.price)} x {item.quantity}</Text>
                 </View>
             </TouchableOpacity>
-
         )
     };
-
 
     return (
         <View style={styles.container}>

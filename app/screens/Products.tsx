@@ -1,7 +1,7 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react'
-import { View, StyleSheet, TextInput, Button, TouchableOpacity } from 'react-native'
+import React, { useEffect, useLayoutEffect, useState } from 'react';
+import { View, StyleSheet, TextInput, Button, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { DetailsPageProps } from '../../App'
+import { DetailsPageProps } from '../../App';
 import { Product, useDB } from '../hooks/useDB';
 
 const Products = ({ navigation, route }: DetailsPageProps) => {
@@ -46,8 +46,6 @@ const Products = ({ navigation, route }: DetailsPageProps) => {
     })
   }, []);
 
-
-
   return (
     <View style={styles.container}>
       {product && (
@@ -65,7 +63,6 @@ const Products = ({ navigation, route }: DetailsPageProps) => {
     </View>
   )
 };
-
 
 const styles = StyleSheet.create({
   container: {

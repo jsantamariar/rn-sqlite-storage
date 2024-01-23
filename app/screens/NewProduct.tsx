@@ -1,25 +1,23 @@
-import { View, Text, StyleSheet, TextInput, Button } from 'react-native'
-import React, { useState } from 'react'
-import { ModalPageProps } from '../../App'
+import React, { useState } from 'react';
+import { View, StyleSheet, TextInput, Button } from 'react-native';
+import { ModalPageProps } from '../../App';
 import { Product, useDB } from '../hooks/useDB';
 
 const NewProduct = ({ navigation }: ModalPageProps) => {
     const { insertProduct } = useDB();
 
     const [product, setProduct] = useState<Product>({
-        name: 'hat',
+        name: '',
         description: '',
-        price: 42,
+        price: 1,
         image: '',
-        category: 'clohting',
-        quantity: 0
+        category: '',
+        quantity: 1
     });
 
     const addProduct = async () => {
-        const insertedProduct = await insertProduct(product);
-        console.log(insertedProduct);
+        await insertProduct(product);
         navigation.goBack();
-        return insertProduct;
     };
 
 
@@ -56,4 +54,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default NewProduct
+export default NewProduct;
