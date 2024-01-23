@@ -1,8 +1,9 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { View, StyleSheet, TextInput, Button, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useDB } from '@/hooks/useDB';
+import { Product } from '@/interfaces';
 import { DetailsPageProps } from '../../App';
-import { Product, useDB } from '../hooks/useDB';
 
 const Products = ({ navigation, route }: DetailsPageProps) => {
   const { id } = route.params;
@@ -43,7 +44,7 @@ const Products = ({ navigation, route }: DetailsPageProps) => {
           <Ionicons name="trash-outline" size={24} color="#000" />
         </TouchableOpacity>
       )
-    })
+    });
   }, []);
 
   return (
@@ -61,7 +62,7 @@ const Products = ({ navigation, route }: DetailsPageProps) => {
       )}
       <Button title="Update Product" onPress={onUpdateProduct} />
     </View>
-  )
+  );
 };
 
 const styles = StyleSheet.create({
@@ -78,8 +79,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 10,
     backgroundColor: '#fff'
-
-  }
+  },
 });
 
 export default Products;

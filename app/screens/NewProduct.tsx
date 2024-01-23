@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, TextInput, Button } from 'react-native';
+import { Product } from '@/interfaces';
+import { useDB } from '@/hooks/useDB';
 import { ModalPageProps } from '../../App';
-import { Product, useDB } from '../hooks/useDB';
 
 const NewProduct = ({ navigation }: ModalPageProps) => {
     const { insertProduct } = useDB();
@@ -20,7 +21,6 @@ const NewProduct = ({ navigation }: ModalPageProps) => {
         navigation.goBack();
     };
 
-
     return (
         <View style={styles.container}>
             <View style={styles.form}>
@@ -33,7 +33,7 @@ const NewProduct = ({ navigation }: ModalPageProps) => {
             </View>
             <Button title="Create Product" onPress={addProduct} />
         </View>
-    )
+    );
 };
 
 const styles = StyleSheet.create({
@@ -50,8 +50,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: 10,
         backgroundColor: '#fff'
-
-    }
+    },
 });
 
 export default NewProduct;

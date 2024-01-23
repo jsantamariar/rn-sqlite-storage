@@ -3,22 +3,13 @@ import { Platform } from "react-native";
 import * as SQLite from "expo-sqlite";
 import * as FileSystem from "expo-file-system";
 import * as Sharing from "expo-sharing";
-
-export interface Product {
-  id?: number;
-  name: string;
-  price: number;
-  quantity: number;
-  image: string;
-  description: string;
-  category: string;
-}
+import { Product } from "@/interfaces";
 
 export const useDB = () => {
   const db = SQLite.openDatabase("shop.db");
 
   useEffect(() => {
-    debugDB();
+    // debugDB();
     initDB();
   }, []);
 

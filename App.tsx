@@ -2,9 +2,9 @@ import { StatusBar, TouchableOpacity } from 'react-native';
 import { NavigationContainer, NavigationProp, useNavigation } from '@react-navigation/native';
 import { NativeStackScreenProps, createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Ionicons } from '@expo/vector-icons';
-import NewProduct from './app/screens/NewProduct';
-import Home from './app/screens/Home';
-import Products from './app/screens/Products';
+import NewProduct from '@/screens/NewProduct';
+import Home from '@/screens/Home';
+import Products from '@/screens/Products';
 
 type RootStackNavigatorParamList = {
   Products: undefined;
@@ -39,7 +39,6 @@ const RootStackNavigation = () => {
 };
 
 export default function App() {
-
   return (
     <>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
